@@ -49,3 +49,10 @@ computeUrgencyLabel e' una funzione pura (input -> output, nessun I/O). Un unit 
 ```txt
 Niente - test minimo, nessuna fixture superflua, nessun framework extra.
 ```
+
+### implementazione api test
+
+File: tests/api/tickets.test.js
+Comando: node --test "tests/api/\*.test.js"
+Output: whatsapp -> 400 + fieldErrors.sourceChannel
+Rischio protetto: se validateTicketInput, la condizione 400, o la shape della risposta JSON in app.js viene alterata, il test fallisce.
